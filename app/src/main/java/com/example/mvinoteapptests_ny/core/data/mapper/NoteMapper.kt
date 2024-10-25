@@ -1,0 +1,33 @@
+package com.example.mvinoteapptests_ny.core.data.mapper
+
+import com.example.mvinoteapptests_ny.core.data.local.NoteEntity
+import com.example.mvinoteapptests_ny.core.domain.model.NoteItem
+
+fun NoteEntity.toNoteItem(): NoteItem {
+    return NoteItem(
+        title = title,
+        description = description,
+        imageUrl = imageUrl,
+        dateAdded = dateAdded,
+        id = id
+    )
+}
+
+fun NoteItem.toNoteEntityForInsertion(): NoteEntity {
+    return NoteEntity(
+        title = title,
+        description = description,
+        imageUrl = imageUrl,
+        dateAdded = dateAdded,
+    )
+}
+
+fun NoteItem.toNoteEntityForDeletion(): NoteEntity {
+    return NoteEntity(
+        title = title,
+        description = description,
+        imageUrl = imageUrl,
+        dateAdded = dateAdded,
+        id = id
+    )
+}
